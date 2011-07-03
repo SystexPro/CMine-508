@@ -61,4 +61,21 @@ public class ItemList {
 		lowAlch = la;
 		bonuses = b;
 	}
+	
+	//CMine Start
+	/**
+	 * Retrive Item
+	 */
+	public String getName() {
+		return this.itemName;
+	}
+	
+	/**
+	 * Retrive Description
+	 * @return
+	 */
+	public String getDescription() {
+		return this.itemDescription;
+	}
+	
 }
