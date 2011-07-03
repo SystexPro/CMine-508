@@ -2,6 +2,9 @@
 package Bulby.io.packets;
 
 
+import org.cmine.event.Event.Type;
+import org.cmine.event.player.PlayerItempickupEvent;
+
 import Bulby.Engine;
 import Bulby.util.Misc;
 import Bulby.players.Player;
@@ -41,6 +44,8 @@ public class PickupItem implements Packet {
             return;
         }
         GroundItem g = Engine.items.groundItems[idx];
+        PlayerItempickupEvent event = new PlayerItempickupEvent(Type.PLAYER_PICKUPITEM, p);
+
 
         if (g != null) {
             if (Engine.playerItems.addItem(p, g.itemId, g.itemAmt)) {
