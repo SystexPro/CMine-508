@@ -702,7 +702,6 @@ p.stream.readUnsignedByte();
 				p.frames.setString(p, "<img=1><col=FF000>World 1 (Complete)", 274, 41);
 				p.frames.setString(p, "<img=0><col=FF0000>World 2 (Incomplete)", 274, 42);
 				p.frames.setString(p, "", 274, 9+i);
-
 			}
 			if(p.AtCastleWars())
 			{
