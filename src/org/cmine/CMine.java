@@ -21,16 +21,13 @@ public class CMine implements Runnable {
 			pluginDir.mkdir();
 			Misc.println("Plugin folder not found. Creating folder");
 		}
-
 	}
 
 	public void loadConfigFile() {
-		Configuration configFile = new Configuration(new File("cmine.yml"));
+		Configuration configFile = new Configuration(new File(getDataFolder() + "cmine.yml"));
 		configFile.load();
 		configFile.getString("Server-Name", serverName);
 		configFile.getInt("Max Players", maxPlayers);
-		
-		
 		configFile.save();
 	}
 
@@ -39,11 +36,27 @@ public class CMine implements Runnable {
 		return "CMine";
 	}
 
+	/**
+	 * Returns Build Version
+	 * @return
+	 */
 	public String getBuild() {
 		return "#600";
 	}
 	
+	/**
+	 * Plugin Folder
+	 * @return
+	 */
 	public String getPluginDir() {
-		return "./plugins";
+		return "./plugins/";
+	}
+	
+	/**
+	 * Data Folder
+	 * @return
+	 */
+	public String getDataFolder() {
+		return "./data/";
 	}
 }
