@@ -1,9 +1,7 @@
 package org.cmine;
 
 import java.io.File;
-
 import org.cmine.util.config.Configuration;
-
 import Bulby.util.Misc;
 
 public class CMine implements Runnable {
@@ -11,6 +9,7 @@ public class CMine implements Runnable {
 	public String serverName = "server";
 	public int maxPlayers = 10;
 	public File pluginDir = new File(getPluginDir());
+	public boolean usemysql = false;
 
 	public void run() {
 		Misc.println("Starting CMine server version Beta 508");
@@ -28,6 +27,7 @@ public class CMine implements Runnable {
 		configFile.load();
 		configFile.getString("Server-Name", serverName);
 		configFile.getInt("Max Players", maxPlayers);
+		configFile.getBoolean("Use MySQL", usemysql);
 		configFile.save();
 	}
 
